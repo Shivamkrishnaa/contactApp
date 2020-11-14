@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../../_axios'
+import axios from '../../../_axios'
 import AppBar from '@material-ui/core/AppBar';
 import _ from 'lodash';
 import moment from 'moment';
@@ -112,7 +112,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const redirectTo= ()=>{
-    Router.push('/contact/'+window.location.pathname.replace('/contact/','')+'/message');
+    if (process.browser) {
+        Router.push('/contact/'+window.location.pathname.replace('/contact/','')+'/message');
+        // Client-side-only code
+      }
   }
 
 export default function Pricing() {
@@ -127,21 +130,25 @@ export default function Pricing() {
     useEffect(() => { getSms() }, [])
 
     const getSms = (p) => {
-        axios.get(`/api/v1/user/${window.location.pathname.split('/')[2]}`, {})
-            .then(r => {
-                console.log(r.data.data.sms.otp)
-                setOtp(r.data.data.sms.otp, console.log(otp));
-                document.getElementById('outlined-secondary').value =  document.getElementById('outlined-secondary').value + r.data.data.sms.otp
-            })
-            .catch(err => {
-                console.log(err)
-            });
-    }
+        if (process.browser) {
+            // Client-side-only code
+            axios.get(`/api/v1/user/${window.location.pathname.split('/')[2]}`, {})
+                .then(r => {
+                    console.log(r.data.data.sms.otp)
+                    setOtp(r.data.data.sms.otp, console.log(otp));
+                    document.getElementById('outlined-secondary').value =  document.getElementById('outlined-secondary').value + r.data.data.sms.otp
+                })
+                .catch(err => {
+                    console.log(err)
+                });
+        }
+          }
     const bull = <span className={classes.bullet}>•</span>;
     const sendMessage = (p) => {
     const {pathname} = Router;
     console.log(pathname, otp);
-    
+    if (process.browser) {
+        // Client-side-only code
         axios.post(`/api/v1/user/${window.location.pathname.split('/')[2]}/${window.location.pathname.split('/')[3]}`, {
             message: document.getElementById('outlined-secondary').value.replace(otp,'')
         })
@@ -152,6 +159,7 @@ export default function Pricing() {
             .catch(err => {
                 console.log(err)
             });
+      }
     }
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -183,7 +191,7 @@ export default function Pricing() {
       </Link>
       <Link
         color="inherit"
-        href={`/contact/${window.location.pathname.split('/')[2]}`}
+        href={`/contact/${process.browser ? window.location.pathname.split('/')[2]: null}`}
         className={classes.link}
       >
         <WhatshotIcon className={classes.icon} />
