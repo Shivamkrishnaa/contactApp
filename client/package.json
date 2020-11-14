@@ -22,7 +22,7 @@
     "npm":"6.14.8"
 },
   "scripts": {
-    "dev": "next -p 443",
+    "dev": "next -p $PORT",
     "build": "next build",
     "start": "next start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
