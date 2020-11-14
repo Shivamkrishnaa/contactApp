@@ -5,6 +5,9 @@
     "dependencies": {
 
     },
+    "engines": {
+        "node": "14.15.0"
+    },
     "scripts": {
         "heroku-postbuild": "cd client && npm install && npm run build && npm run start ",
         "heroku-prebuild": "cd server && npm install && npm run build && npm run serve "
