@@ -17,6 +17,9 @@
     "react-dom": "latest",
     "react-window": "^1.8.6"
   },
+  "engines": {
+    "node": "14.15.0"
+},
   "scripts": {
     "dev": "next",
     "build": "next build",
