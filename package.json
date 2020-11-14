@@ -1,0 +1,13 @@
+{
+    "name": "nextjs",
+    "version": "4.0.0",
+    "private": true,
+    "dependencies": {
+
+    },
+    "scripts": {
+        "heroku-postbuild": "cd client && npm install && npm run build && npm run start ",
+        "heroku-prebuild": "cd server && npm install && npm run build && npm run serve "
+    }
+  }
+  
