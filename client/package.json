@@ -23,8 +23,8 @@
 },
   "scripts": {
     "dev": "next ",
-    "build": "next build",
-    "start": "next start -p $PORT",
+    "build": "next build && next export",
+    "start": "next start ",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }
 }
