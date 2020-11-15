@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-	url: process.env.DATABASE_URL,
+	'url': process.env.DATABASE_URL,
 	'migrations-path': path.join(__dirname, 'db', 'migrations'),
 	'seeders-path': path.join(__dirname, 'db', 'seeders'),
 	'models-path': path.join('src/', 'models'),
