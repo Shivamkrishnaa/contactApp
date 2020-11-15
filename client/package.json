@@ -21,10 +21,10 @@
     "node": "14.15.0",
     "npm":"6.14.8"
 },
-  "scripts": {
-    "dev": "next ",
-    "build": "next build && next export",
-    "start": "next start ",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
-  }
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "export": "next export"
+}
 }
