@@ -40,4 +40,6 @@ export default {
      * used for connection
      */
     password : process.env.DB_PASSWORD || "",
+
+    url: process.env.DATABASE_URL || ''
 }

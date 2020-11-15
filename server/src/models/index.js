@@ -5,16 +5,22 @@ import config from '../config';
 const basename = _basename(__filename);
 const db = {};
 
-let sequelize = new Sequelize(config.db.database, config.db.username, config.db.password, {
-    host: config.db.host,
-    port: config.db.port,
-    dialect: config.db.connection,
-    logging: false,
-    pool: {
-        max: 20,
-        min: 1,
-        idle: 20000,
-        acquire: 1000000
+let sequelize = new Sequelize(config.db.url , {
+    // host: config.db.host,
+    // port: config.db.port,
+    // dialect: config.db.connection,
+    // logging: false,
+    // pool: {
+    //     max: 20,
+    //     min: 1,
+    //     idle: 20000,
+    //     acquire: 1000000
+    // }
+
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+        ssl: true
     }
 });
 
