@@ -30,7 +30,7 @@ import Box from '@material-ui/core/Box';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-
+import Head from 'next/head'
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -137,6 +137,11 @@ export default function Pricing(props) {
 
     return (
         <React.Fragment>
+        <Head>
+            <title>Connect</title>
+            <link rel="icon" href="/favicon.ico" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          </Head>
             <CssBaseline />
             <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>

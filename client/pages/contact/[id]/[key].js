@@ -25,7 +25,7 @@ import { useRouter } from 'next/router'
 import Skeleton from '@material-ui/lab/Skeleton';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { green } from '@material-ui/core/colors';
-
+import Head from 'next/head'
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -209,6 +209,11 @@ export default function Pricing() {
 
     return (
         <React.Fragment>
+        <Head>
+            <title>Connect</title>
+            <link rel="icon" href="/favicon.ico" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          </Head>
             <div className={classes.root}>
                 <Snackbar open={open} autoHideDuration={3000} >
                     <Alert severity={msg.severity}>

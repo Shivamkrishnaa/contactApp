@@ -26,7 +26,7 @@ import PhoneIcon from '@material-ui/icons/PhoneOutlined';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import HomeIcon from '@material-ui/icons/Contacts';
 import GrainIcon from '@material-ui/icons/PermIdentity';
-
+import Head from 'next/head'
 function handleClick(event) {
     event.preventDefault();
     console.info('You clicked a breadcrumb.');
@@ -134,6 +134,11 @@ export default function Pricing() {
 
     return (
         <React.Fragment>
+        <Head>
+            <title>Connect</title>
+            <link rel="icon" href="/favicon.ico" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          </Head>
             <CssBaseline />
             <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
