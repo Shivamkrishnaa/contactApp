@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+mport React, { useEffect, useState } from 'react';
 import axios from '../../_axios'
 import AppBar from '@material-ui/core/AppBar';
 import _ from 'lodash';
 import moment from 'moment';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -14,26 +13,19 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import filter from '@mcabreradev/filter';
-import IconButton from '@material-ui/core/IconButton';
-import Box from '@material-ui/core/Box';
+import Skeleton from '@material-ui/lab/Skeleton';
 import Router from 'next/router'
 import Avatar from '@material-ui/core/Avatar';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import Icon from '@material-ui/core/Icon';
 import Divider from '@material-ui/core/Divider';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import PhoneIcon from '@material-ui/icons/PhoneOutlined';
-import Sms from '@material-ui/icons/Sms';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import HomeIcon from '@material-ui/icons/Home';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import GrainIcon from '@material-ui/icons/Grain';
+import HomeIcon from '@material-ui/icons/Contacts';
+import GrainIcon from '@material-ui/icons/PermIdentity';
 
 function handleClick(event) {
     event.preventDefault();
@@ -159,7 +151,7 @@ export default function Pricing() {
                 </Toolbar>
             </AppBar>
             <Breadcrumbs aria-label="breadcrumb">
-      <Link color="inherit" href="/" onClick={handleClick} className={classes.link}>
+      <Link color="inherit" href="/contact"  className={classes.link}>
         <HomeIcon className={classes.icon} />
         Contacts
       </Link>
@@ -177,7 +169,7 @@ export default function Pricing() {
       <ListItemAvatar style={{ maxHeight: 200, overflow: 'auto', padding: 10, 'marginRight': '20px' }}>
         <Avatar>{formatLetter(items.firstName, items.lastName)}</Avatar>
        </ListItemAvatar>
-       <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} primary={(!items.firstName && !items.lastName) ? "Unknown" : formatText(items.firstName, items.lastName)} />
+       <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} primary={(!items.firstName && !items.lastName) ? <Skeleton variant="text" width={210}  /> : formatText(items.firstName, items.lastName)} />
       
 
       </ListItem>
@@ -190,7 +182,7 @@ export default function Pricing() {
       }>
       <ListItem >
       <PhoneIcon color="primary"/>
-       <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} secondary={(!items.phone) ? 'Unknown' : items.phone}  />
+       <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} secondary={(!items.phone) ? <Skeleton variant="text" width={210} /> : items.phone}  />
        
        <Button onClick={()=>redirectTo(sms.key)} variant="contained" size="large" color="primary" className={classes.margin}>
         Send Message
