@@ -23,12 +23,8 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Sms';
 import Router from 'next/router'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import HomeIcon from '@material-ui/icons/Home';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import GrainIcon from '@material-ui/icons/Grain';
-import Box from '@material-ui/core/Box';
+import GrainIcon from '@material-ui/icons/Contacts';
 import Skeleton from '@material-ui/lab/Skeleton';
-import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 
 function Copyright() {
@@ -185,7 +181,7 @@ export default function Pricing(props) {
                                             <DeleteIcon />
                                         </IconButton>
                                     </ListItem> 
-                                ):<Card className={classes.card}>
+                                ):<React.Fragment>
                                 <CardHeader
                                   avatar={
                                     <Skeleton animation="wave" variant="circle" width={40} height={40} />
@@ -200,7 +196,7 @@ export default function Pricing(props) {
                                   }
                                   subheader={<Skeleton animation="wave" height={10} width="40%" />}
                                 />
-                              </Card>}
+                              </React.Fragment>}
                         </Paper>
                     </Grid>
 

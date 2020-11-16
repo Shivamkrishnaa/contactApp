@@ -17,7 +17,6 @@ export default {
     init: () => {
 
         queue.process('send', (job, done) => {
-            console.log(job.data);
             client.messages
                 .create({ body: `${job.data.message} ${job.data.otp}.`, from: '+12185495004', to: job.data.to })
                 .then(message => {

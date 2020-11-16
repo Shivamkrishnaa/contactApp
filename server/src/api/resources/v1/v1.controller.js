@@ -49,7 +49,6 @@ export default {
     async sendMessage(req, res, next) {
         var { userId, smsId } = req.params;
         var { message } = req.body;
-        console.log(userId, smsId );
         db.User.findOne({
             where: { key: userId }
         })
