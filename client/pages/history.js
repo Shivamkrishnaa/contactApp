@@ -41,10 +41,6 @@ function Copyright() {
         </Typography>
     );
 }
-function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-  }
 const useStyles = makeStyles((theme) => ({
     '@global': {
         ul: {
@@ -109,7 +105,6 @@ export default function Pricing() {
     const listItems = (p) => {
         axios.get('/api/v1/message', {})
             .then(r => {
-                console.log(r.data)
                 setItems(r.data.data)
                 setItemsFiltered(r.data.data)
             })
@@ -118,7 +113,6 @@ export default function Pricing() {
             });
     }
     const handleSearch = (user) => {
-        console.log(user);
         if (user) {
             setItemsFiltered(filter(items, user));
         }
