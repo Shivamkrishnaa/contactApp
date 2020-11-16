@@ -24,9 +24,11 @@ import Router from 'next/router'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
-import GrainIcon from '@material-ui/icons/Grain';
+import GrainIcon from '@material-ui/icons/History';
 import Box from '@material-ui/core/Box';
-
+import Card from "@material-ui/core/Card";
+import Skeleton from '@material-ui/lab/Skeleton';
+import CardHeader from "@material-ui/core/CardHeader";
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -170,16 +172,31 @@ export default function Pricing() {
                         <Paper style={{ maxHeight: 600, overflow: 'auto', padding: 15 }}>
 
                             {
-                                itemsFiltered.map((r, i) =>
+                                (itemsFiltered && itemsFiltered.length) ? itemsFiltered.map((r, i) =>
                                     <ListItem style={{ width: '100%', padding: 10 }} autoFocus={i == 0 ? true : false} key={r.id}  >
                                         <ListItemAvatar style={{ maxHeight: 200, overflow: 'auto', padding: 10, 'marginRight': '20px' }}>
                                             <Avatar>{formatLetter(r.User.firstName, r.User.lastName)}</Avatar>
                                         </ListItemAvatar>
                                         <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} primary={(!r.User.firstName && !r.User.lastName) ? r.phone : formatText(r.User.firstName, r.User.lastName)} secondary={(!r.User.firstName && !r.User.lastName) ? '' : r.User.phone} />
-                                        <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} primary={`${r.body} ${r.otp}`} secondary={formatDate(r.sentAt)} />
+                                        <ListItemText style={{ maxHeight: 200, overflow: 'auto', padding: 1 }} primary={`SMS: ${ r.body} ${r.otp}`} secondary={formatDate(r.sentAt)} />
 
                                     </ListItem>
-                                )}
+                                ): <React.Fragment>
+                                <CardHeader
+                                  avatar={
+                                    <Skeleton animation="wave" variant="circle" width={40} height={40} />
+                                  }
+                                  title={
+                                    <Skeleton
+                                      animation="wave"
+                                      height={10}
+                                      width="80%"
+                                      style={{ marginBottom: 6 }}
+                                    />
+                                  }
+                                  subheader={<Skeleton animation="wave" height={10} width="40%" />}
+                                />
+                              </React.Fragment>}
                         </Paper>
                     </Grid>
 
