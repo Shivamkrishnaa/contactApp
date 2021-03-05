@@ -10,8 +10,8 @@
         "npm":"6.14.8"
     },
     "scripts": {
-        "heroku-postbuild": "cd client && npm install && npm run build && npm run start",
-        "start": "cd client && npm install && npm run build && npm run start"
+        "heroku-postbuild": "cd server && npm install && npm run start",
+        "start": "cd server && npm install && npm run start"
     }
   }
   
