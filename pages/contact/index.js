@@ -108,7 +108,6 @@ export default function Pricing(props) {
     const listItems = (p) => {
         axios.get('/api/v1/user/', {})
             .then(r => {
-                console.log(r.data)
                 setItems(r.data.data)
                 setItemsFiltered(r.data.data)
             })
