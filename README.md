@@ -1,32 +1,25 @@
-# Socialize
-Build using ReactJs, Node.js, MySQL, Nextjs.
-A simple app Contact and SMS app
+# Next.js example
 
-## How to run server and migrate database
+## How to use
 
+Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+
+```sh
+curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
+cd nextjs
 ```
-cd server
-touch .env
-copy .env.example to .env and change database credentails
+
+Install it and run:
+
+```sh
 npm install
-npx sequelize db:migrate
-npx sequelize db:seed:all
-npm start
-```
-API Server would start at 4000 
-# API endpoints
-
-> Retreive list of Contacts :  GET Method  http://{{url}}/api/v1/users?page={{page}}&limit={{limit}}
-
-> Retreive profile of User : GET Method  http://{{url}}/api/v1/users/{{userId}}?page={{page}}&limit={{limit}}
-
-> Retrieve OTP: GET Method  http://{{url}}/api/v1/users/userId/{{smsId}}
-
-> Send OTP: POST Method  http://{{url}}/api/v1/users/{{userId}}/{{smsId}}
-
-## How to run Client (React application)
-```
-cd client
 npm run dev
 ```
-App would start on localhost:3000
+
+or:
+
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/nextjs)
+
+## The idea behind the example
+
+[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
