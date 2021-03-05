@@ -3,7 +3,7 @@ var crypto = require('crypto')
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.bulkInsert('Users', [{
-			firstName: 'Shivam',
+			firstName: 'Shivamm',
 			lastName: 'Krishna',
 			phone: '+917217667317',
 			key:  crypto.randomBytes(40).toString('hex'),
