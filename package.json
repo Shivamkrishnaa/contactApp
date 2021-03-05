@@ -1,17 +1,32 @@
 {
-    "name": "nextjs",
-    "version": "4.0.0",
-    "private": true,
-    "dependencies": {
-
-    },
-    "engines": {
-        "node": "14.15.0",
-        "npm":"6.14.8"
-    },
-    "scripts": {
-        "heroku-postbuild": "cd client && npm install && npm run build && npm run start",
-        "start": "cd client && npm install && npm run build && npm run start"
-    }
+  "name": "nextjs",
+  "version": "4.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@mcabreradev/filter": "^2.0.2",
+    "axios": "^0.21.0",
+    "child_process": "^1.0.2",
+    "clsx": "latest",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "next": "latest",
+    "node-cmd": "^4.0.0",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-window": "^1.8.6"
+  },
+  "engines": {
+    "node": "14.15.0",
+    "npm": "6.14.8"
+  },
+  "scripts": {
+    "dev": "next ",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }
-  
+}

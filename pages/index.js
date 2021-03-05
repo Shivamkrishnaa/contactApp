@@ -1,3 +1,4 @@
+
 import React , { useEffect, useState }  from 'react';
 import Container from '@material-ui/core/Container';
 import Head from 'next/head'
@@ -20,7 +21,6 @@ export default function Index() {
     const {pathname} = Router
     if(pathname == '/' ){
       setTimeout(()=>{
-
         Router.push('/contact')
       },500)
     }
