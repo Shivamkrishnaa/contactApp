@@ -20,11 +20,11 @@ import HomeIcon from '@material-ui/icons/Contacts';
 import WhatshotIcon from '@material-ui/icons/PermIdentity';
 import GrainIcon from '@material-ui/icons/MailOutline';
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 import { useRouter } from 'next/router'
 import Skeleton from '@material-ui/lab/Skeleton';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { green } from '@material-ui/core/colors';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 function Alert(props) {
