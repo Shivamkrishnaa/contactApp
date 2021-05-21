@@ -216,9 +216,72 @@ export default function Index() {
                         </CardFooter>
                         </Card>
                     </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                        <Card product className={classes.cardHover}>
+                        <CardHeader image className={classes.cardHeaderHover}>
+                            <a href="#" onClick={e => {e.preventDefault(); window.location.href = 'http://emailbuilder-alpha.vercel.app/'}}>
+                                <img src="assets/img/industry_bg.jpg" alt="..." />
+                            </a>
+                        </CardHeader>
+                        <CardBody>
+                            <div className={classes.cardHoverUnder}>
+                                <Tooltip
+                                    id="tooltip-top"
+                                    title="View"
+                                    placement="bottom"
+                                    classes={{tooltip: classes.tooltip}}
+                                    >
+                                    <Button color="transparent" simple justIcon
+                                    onClick={() => { window.location="/movie" }}>
+                                        <ArtTrack className={classes.underChartIcons} />
+                                    </Button>
+                                </Tooltip>
+                                <Tooltip
+                                    id="tooltip-top"
+                                    title="Edit"
+                                    placement="bottom"
+                                    classes={{tooltip: classes.tooltip}}
+                                    disabled
+                                    >
+                                    <Button color="success" simple justIcon>
+                                        <Refresh className={classes.underChartIcons} />
+                                    </Button>
+                                </Tooltip>
+                                <Tooltip
+                                  disabled
+                                    id="tooltip-top"
+                                    title="Remove"
+                                    placement="bottom"
+                                    classes={{tooltip: classes.tooltip}}
+                                    >
+                                    <Button color="danger" simple justIcon>
+                                        <Edit className={classes.underChartIcons} />
+                                    </Button>
+                                </Tooltip>
+                            </div>
+                            <h4 className={classes.cardProductTitle}>
+                                <a href="#" onClick={e => {e.preventDefault(); window.location.href = 'http://emailbuilder-alpha.vercel.app/'}} >
+                                    Email builder
+                                </a>
+                            </h4>
+                            <p className={classes.cardProductDesciprion}>
+                            PWA Drag & drop email builder App.
+                            </p>
+                        </CardBody>
+                        <CardFooter product>
+                            <div className={classes.price}>
+                                <h4></h4>
+                            </div>
+                            <div className={`${classes.stats} ${classes.productStats}`}>
+                                MJML, ReactJS, Materal-UI
+                                <Place /> 
+                            </div>
+                        </CardFooter>
+                        </Card>
+                    </GridItem>
                     
                 </GridContainer>
-                <div class="calendar">
+                <div className="calendar">
         </div>
         </GridItem>
     </GridContainer>
